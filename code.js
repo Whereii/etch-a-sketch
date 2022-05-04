@@ -1,9 +1,11 @@
 const container = document.getElementById('container');
 let innerCell = document.getElementsByClassName('cell')
 let colorBeingChanged = 'colorChange';
+let reset = document.getElementById('reset')
+let gridSize = prompt('How wide and tall would you like your etch-a-sketch?');
 
-function createGrid (width, height) {
-    let total = width * height;
+function createGrid (width) {
+    let total = width * width;
     for(let i = 0; i < total; i++){
         let cell = document.createElement('div');
         cell.classList.add('cell');
@@ -11,7 +13,7 @@ function createGrid (width, height) {
     };
 };
 
-createGrid(16, 16);
+createGrid(gridSize);
 
 
 
@@ -25,3 +27,16 @@ function hoverChecker (arry) {
 };
 
 hoverChecker(innerCell);
+
+reset.addEventListener('click', function () {
+    resetGrid();
+})
+
+
+function resetGrid () {
+    while(container.hasChildNodes()) {
+        container.removeChild(container.firstChild);
+    }
+    let newGrid = prompt('How wide and tall would you like your new etch-a-sketch?')
+    createGrid((newGrid));
+}

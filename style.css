@@ -32,3 +32,11 @@ body {
 .colorChange {
     background-color: black;
 }
+
+#reset {
+    font-size: 30px;
+    background-color: orange;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 20%;
+}
