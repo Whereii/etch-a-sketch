@@ -29,8 +29,14 @@ if(gridSize > 100) {
 
 function hoverChecker (arry) {
     for(let i = 0; i < arry.length; i++){
+        const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+        const r = randomBetween(0, 255);
+        const g = randomBetween(0, 255);
+        const b = randomBetween(0, 255);
+        const rgb = `rgb(${r},${g},${b}`;
         arry[i].addEventListener('mouseover', function (e) {
-            e.target.classList.add('colorChange')           // when accessing the e you have to follow it with target because that is how the DOM saves it. always can console.log function(e) to learn more about target.
+            e.target.style.backgroundColor = rgb
+            // e.target.classList.add('colorChange')           // when accessing the e you have to follow it with target because that is how the DOM saves it. always can console.log function(e) to learn more about target.
         });
     };
 };
@@ -54,3 +60,4 @@ function resetGrid () {
         hoverChecker(innerCell)
     }
 }
+
