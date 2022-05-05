@@ -9,7 +9,7 @@ console.log(contWidth)
 
 function createGrid (width) {
     let total = width * width;
-    let cellWH = Math.sqrt(640000/(total)) - 2;
+    let cellWH = Math.sqrt(640000/(total)) - 2;     //figures the size for each of the cells width and height. Also could use the container width / cell number to get width of each cell and then subtract the border
     for(let i = 0; i < total; i++){
         let cell = document.createElement('div');
         cell.classList.add('cell');
