@@ -2,7 +2,6 @@ const container = document.getElementById('container');
 let innerCell = document.getElementsByClassName('cell')
 let colorBeingChanged = 'colorChange';
 let reset = document.getElementById('reset')
-let gridSize = prompt('How wide and tall would you like your etch-a-sketch?');
 let contWidth = container.style.width;
 let contHeight = container.style.height;
 console.log(contWidth)
@@ -19,8 +18,12 @@ function createGrid (width) {
     };
 };
 
-createGrid(gridSize);
-
+let gridSize = prompt('How wide and tall would you like your etch-a-sketch?');
+if(gridSize > 100) {
+    alert('Grid cannot be larger than 100X100')
+} else {
+    createGrid(gridSize);
+};
 
 
 
@@ -44,6 +47,10 @@ function resetGrid () {
         container.removeChild(container.firstChild);
     }
     let newGrid = prompt('How wide and tall would you like your new etch-a-sketch?')
-    createGrid((newGrid));
-    hoverChecker(innerCell)
+    if(newGrid > 100) {
+        alert('Grid cannot be over 100X100')
+    } else {
+        createGrid((newGrid));
+        hoverChecker(innerCell)
+    }
 }
