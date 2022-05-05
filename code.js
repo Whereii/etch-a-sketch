@@ -3,12 +3,18 @@ let innerCell = document.getElementsByClassName('cell')
 let colorBeingChanged = 'colorChange';
 let reset = document.getElementById('reset')
 let gridSize = prompt('How wide and tall would you like your etch-a-sketch?');
+let contWidth = container.style.width;
+let contHeight = container.style.height;
+console.log(contWidth)
 
 function createGrid (width) {
     let total = width * width;
+    let cellWH = Math.sqrt(640000/(total)) - 2;
     for(let i = 0; i < total; i++){
         let cell = document.createElement('div');
         cell.classList.add('cell');
+        cell.style.width = cellWH + 'px';
+        cell.style.height = cellWH + 'px';
         container.appendChild(cell);
     };
 };
@@ -39,4 +45,5 @@ function resetGrid () {
     }
     let newGrid = prompt('How wide and tall would you like your new etch-a-sketch?')
     createGrid((newGrid));
+    hoverChecker(innerCell)
 }

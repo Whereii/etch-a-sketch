@@ -6,22 +6,19 @@ body {
 }
 
 .cell {
-    display: flex;
-    flex: auto;
-    width: 60px;
-    height: 60px;
     border: 1px solid black;
+    flex: auto;
 }
 
 
 #container {
-    width: 1000px;
+    width: 800px;
     height: 800px;
-    flex: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+  
 }
 
 .title {
